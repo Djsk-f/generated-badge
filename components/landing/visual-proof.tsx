@@ -341,7 +341,7 @@ function WorkflowMockup() {
 
 export function VisualProof() {
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
+    <section className="relative py-24 overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -353,7 +353,7 @@ export function VisualProof() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto space-y-24">
+      <div className="relative max-w-7xl mx-auto px-6 space-y-24">
         {/* ── Header ──────────────────────────────────────── */}
         <motion.div
           className="text-center max-w-2xl mx-auto"

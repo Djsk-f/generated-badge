@@ -44,7 +44,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="relative py-24 px-6">
+    <section className="relative py-24">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -68,7 +68,7 @@ export function Features() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative max-w-7xl mx-auto px-6">
         <motion.div
           className="text-center max-w-2xl mx-auto mb-16"
           initial={{ opacity: 0, y: 20 }}

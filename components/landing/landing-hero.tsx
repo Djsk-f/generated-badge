@@ -66,8 +66,8 @@ export function LandingHero() {
       </motion.nav>
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative pt-32 pb-20">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: text */}
             <motion.div
@@ -179,7 +179,7 @@ export function LandingHero() {
       <VisualProof />
 
       {/* CTA */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative py-24 overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 pointer-events-none">
           <motion.div
@@ -190,7 +190,7 @@ export function LandingHero() {
           />
         </div>
 
-        <div className="relative max-w-3xl mx-auto text-center">
+        <div className="relative max-w-7xl mx-auto px-6 text-center">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
