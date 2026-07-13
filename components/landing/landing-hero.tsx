@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { BadgeDemo } from "@/components/landing/badge-demo";
 import { Features } from "@/components/landing/features";
+import { VisualProof } from "@/components/landing/visual-proof";
 import { Footer } from "@/components/landing/footer";
 import { AuthModal } from "@/components/landing/auth-modal";
 import { HeroBackground } from "@/components/landing/hero-bg";
@@ -173,6 +174,9 @@ export function LandingHero() {
 
       {/* Features */}
       <Features />
+
+      {/* Visual Proof — Galerie de réalisations */}
+      <VisualProof />
 
       {/* CTA */}
       <section className="relative py-24 px-6 overflow-hidden">
