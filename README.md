@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BadgeGen — Générateur de Badges Événementiels
 
-## Getting Started
+Application SaaS de création et génération de badges professionnels pour événements.
 
-First, run the development server:
+## Fonctionnalités
+
+- **Authentification** — Login/signup avec Supabase Auth
+- **Dashboard** — Vue d'ensemble avec stats réelles
+- **Événements** — CRUD complet avec dimensions badges
+- **Templates** — Éditeur visuel drag & drop (textes, photos, logos, QR codes)
+- **Participants** — Import CSV/Excel avec mapping automatique
+- **Photos** — Import massif avec matching par nom de fichier
+- **Badges** — Génération PDF en grille (A4) prête à imprimer
+
+## Stack Technique
+
+- **Frontend** : Next.js 16, React 19, Tailwind CSS v4
+- **Backend** : Supabase (PostgreSQL, Auth, Storage)
+- **UI** : Radix UI, Framer Motion, Lucide Icons
+- **Validation** : Zod
+- **PDF** : @react-pdf/renderer
+
+## Installation
 
 ```bash
+# Cloner le repo
+git clone https://github.com/VOTRE_USER/badge-generated.git
+cd badge-generated
+
+# Installer les dépendances
+npm install
+
+# Configurer les variables d'environnement
+cp .env.local.example .env.local
+# Éditer .env.local avec vos clés Supabase
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Variables d'environnement
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://votre-projet.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=votre-cle
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Déploiement Vercel
 
-## Learn More
+1. Pusher le code sur GitHub
+2. Importer le repo sur Vercel
+3. Ajouter les variables d'environnement
+4. Déployer
 
-To learn more about Next.js, take a look at the following resources:
+## Structure du projet
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+app/
+├── (auth)/              # Server Actions auth
+├── (dashboard)/         # Dashboard protégé
+├── (public)/            # Collecte publique
+├── api/                 # API Routes
+├── page.tsx             # Landing page
+components/
+├── landing/             # Composants landing
+├── layout/              # Sidebar, breadcrumb
+├── participants/        # Table, import, photos
+├── templates/           # Éditeur de templates
+├── ui/                  # Composants réutilisables
+lib/
+├── services/            # Logique métier
+├── supabase/            # Clients Supabase
+├── templates/           # Moteur de rendu badges
+├── types/               # Types TypeScript
+├── validators/          # Schémas Zod
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Licence
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Privé — Tous droits réservés
