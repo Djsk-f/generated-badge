@@ -3,13 +3,17 @@ import { redirect } from "next/navigation";
 import { LandingHero } from "@/components/landing/landing-hero";
 
 export default async function LandingPage() {
-  const supabase = await createServerClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  try {
+    const supabase = await createServerClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
-  if (user) {
-    redirect("/dashboard");
+    if (user) {
+      redirect("/dashboard");
+    }
+  } catch {
+    // Supabase injoignable → afficher la landing page (non connecté)
   }
 
   return (
